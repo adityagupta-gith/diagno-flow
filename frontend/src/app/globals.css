@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #070b12;
+  --foreground: #f8fafc;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(30, 41, 59, 0.75);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
+}
+
+/* Ambient Radial Glows */
+.glow-blue {
+  box-shadow: 0 0 40px -5px rgba(59, 130, 246, 0.25);
+}
+
+.glow-critical {
+  box-shadow: 0 0 50px -5px rgba(239, 68, 68, 0.4);
+}
+
+.glow-high {
+  box-shadow: 0 0 45px -5px rgba(249, 115, 22, 0.35);
+}
+
+.glow-moderate {
+  box-shadow: 0 0 40px -5px rgba(234, 179, 8, 0.3);
+}
+
+.glow-low {
+  box-shadow: 0 0 40px -5px rgba(16, 185, 129, 0.3);
+}
+
+/* Pulse Border Animation */
+@keyframes borderPulse {
+  0%, 100% { border-color: rgba(59, 130, 246, 0.4); }
+  50% { border-color: rgba(99, 102, 241, 0.8); }
+}
+
+.animate-border-pulse {
+  animation: borderPulse 3s infinite;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
